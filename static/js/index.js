@@ -32,7 +32,7 @@ for (let i = 0; i < inputs.length - 1; i++) {
 function updateButtonColor(disablesCount, inputsLen) {
     let percentValid = disablesCount / inputsLen * 100;
     form['submit'].style.backgroundImage = `linear-gradient(to right, #0d6efd ${percentValid}%, white ${percentValid}% 100%)`;
-    persInfo = document.getElementById("percentage")
+    let persInfo = document.getElementById("percentage")
     persInfo.innerText = `Заполнено на ${Math.round(percentValid)}%`;
     if (Math.round(percentValid) === 100) {
         persInfo.classList.remove('text-info')
@@ -44,7 +44,7 @@ function updateButtonColor(disablesCount, inputsLen) {
 }
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // предотвратить отправку формы на сервер
+    event.preventDefault();
     let new_client = {};
     // получить данные формы
     const formData = new FormData(event.target);
@@ -63,6 +63,9 @@ form.addEventListener('submit', (event) => {
         }
         inputs.push(cur_elem);
     }
-    alert("Форма отправлена!");
+    disables = 0;
+    updateButtonColor(disables, inputs.length)
+    let myModal = document.getElementById("success");
+    let modal = new bootstrap.Modal(myModal);
+    modal.show();
 });
-
