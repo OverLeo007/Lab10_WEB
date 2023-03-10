@@ -31,7 +31,7 @@
     </div>
 </div>
 <div class="container rounded mt-4 mb-4 p-4 records bg-dark text-white">
-    <form id="myForm">
+    <form id="myForm" action="https://ya.ru" method="GET">
         <div class="row">
             <div class="col-md-6 mb-4">
                 <div class="form-outline">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-outline mb-4">
-            <input type="text" id="address" name="address" class="form-control" required pattern="[а-яА-ЯёЁa-zA-Z]{3,}">
+            <input type="text" id="address" name="address" class="form-control" required pattern="[а-яА-ЯёЁa-zA-Z 0-9]{3,}">
             <label class="form-label" for="address">Адрес</label>
         </div>
         <div class="row">
@@ -72,7 +72,6 @@
         </div>
         <div class="form-outline mb-4">
             <select class="form-select" name='work-group' id="work-group" required>
-                <!--            <option selected>Желаемая область деятельности</option>-->
                 <option value="kiber">Кибернетика - разработка новых роботов</option>
                 <option value="bio">Биоинженерия - прорывные сельхоз культуры</option>
                 <option value="neiro">Нейросети - у истоков нового общества</option>
@@ -90,7 +89,6 @@
 <div class="modal fade" id="success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <!-- Создаем блок для отображения картинки -->
             <div class="modal-body">
                 <div class="row">
                     <div class="col-3">
@@ -101,7 +99,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Создаем кнопку закрытия модального окна -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
             </div>

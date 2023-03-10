@@ -46,13 +46,13 @@ function updateButtonColor(disablesCount, inputsLen) {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let new_client = {};
-    // получить данные формы
     const formData = new FormData(event.target);
     for (let [key, value] of formData.entries()) {
         new_client[key] = value;
     }
 
     print(new_client);
+    // form.submit();
     form.reset();
     inputs = [];
     for (let i = 0; i < form.elements.length; i++) {
@@ -68,4 +68,6 @@ form.addEventListener('submit', (event) => {
     let myModal = document.getElementById("success");
     let modal = new bootstrap.Modal(myModal);
     modal.show();
+    
 });
+
